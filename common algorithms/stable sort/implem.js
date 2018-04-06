@@ -21,4 +21,28 @@ const stableSort = (tab, cmp) => {
   return mergeSort([...tab], 0, tab.length, cmp);
 };
 
-export { stableSort };
+const quickSort = (tab, start, end, cmp) => {
+  if (end - start < 2) return tab;
+
+  let pivot = start;
+  for (let idx = start + 1; idx < end; ++idx) {
+    if (cmp(tab[start], tab[idx]) > 0) {
+      let prev = tab[++pivot];
+      tab[pivot] = tab[idx];
+      tab[idx] = prev;
+    }
+  }
+  let prev = tab[pivot];
+  tab[pivot] = tab[start];
+  tab[start] = prev;
+
+  quickSort(tab, start, pivot, cmp);
+  quickSort(tab, pivot + 1, end, cmp);
+  return tab;
+};
+
+const unstableSort = (tab, cmp) => {
+  return quickSort([...tab], 0, tab.length, cmp);
+};
+
+export { stableSort, unstableSort };
