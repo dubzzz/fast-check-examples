@@ -19,6 +19,7 @@
   "homepage": "https://github.com/dubzzz/fast-check-examples#readme",
   "dependencies": {
     "babel-polyfill": "^6.26.0",
+    "is-thirteen": "^2.0.0",
     "js-yaml": "^3.11.0",
     "left-pad": "^1.3.0",
     "query-string": "^6.0.0"
