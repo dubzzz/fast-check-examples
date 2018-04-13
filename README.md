@@ -1,10 +1,28 @@
-# Property based testing examples based on [fast-check](https://github.com/dubzzz/fast-check)
+# Examples based on [fast-check](https://github.com/dubzzz/fast-check)
 
-This repository contains multiple tests exclusively written using property based testing approach.
+**fast-check** is a property based testing framework written in TypeScript.
 
-Remember that property based does not replace by no means classical example based ones.
-Meanwhile they allow to cover a larger range of inputs and can potentially catch problems not seen by examples.
+It can easily be installed using npm:
+
+```
+npm install fast-check --save-dev
+```
+
+This repository has two main targets:
+- reference useful materials and examples to help users of fast-check
+- give examples of properties
+
+## Project structure
+
+The examples provided in this repository always come with a readme file and an implementation based on fast-check. The readme should describe briefly the algorithm being tested and give examples of properties that might be applied.
+
+**famous packages** directory contains examples of bugs that have been discovered using fast-check on famous npm repositories.
+
+## More on Property Based Testing
 
 More details on Property based testing at:
 - [John Hughes — Don’t Write Tests](https://www.youtube.com/watch?v=hXnS_Xjwk2Y)
 - [Generating test cases so you don’t have to (Spotify)](https://labs.spotify.com/2015/06/25/rapid-check/)
+
+Remember that property based does not replace example based testing.
+Nonetheless it can cover a larger range of inputs and potentially catch problems not seen with examples.
