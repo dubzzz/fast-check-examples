@@ -16,8 +16,6 @@ This repository has two main targets:
 
 The examples provided in this repository always come with a readme file and an implementation based on fast-check. The readme should describe briefly the algorithm being tested and give examples of properties that might be applied.
 
-**famous packages** directory contains examples of bugs that have been discovered using fast-check on famous npm repositories.
-
 ## More on Property Based Testing
 
 More details on Property based testing at:
