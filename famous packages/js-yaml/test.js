@@ -32,10 +32,10 @@ const dumpOptionsArbitrary = fc
           '!!bool': fc.constantFrom('lowercase', 'uppercase', 'camelcase'),
           '!!float': fc.constantFrom('lowercase', 'uppercase', 'camelcase')
         },
-        { with_deleted_keys: true }
+        { withDeletedKeys: true }
       )
     },
-    { with_deleted_keys: true }
+    { withDeletedKeys: true }
   )
   .map(instance => {
     if (instance.condenseFlow === true && instance.flowLevel !== undefined) {
