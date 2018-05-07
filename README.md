@@ -19,6 +19,8 @@ It makes it possible to cover a wider range of inputs and hence find yet undisco
 
 A property can be summurized by: *for any (a, b, ...) such as precondition(a, b, ...) holds, property(a, b, ...) is true*
 
+Property based testing frameworks try to discover inputs `(a, b, ...)` causing `property(a, b, ...)` to be false. If they find such, they have to reduce the counterexample to a minimal counterexample.
+
 ## Tips to find useful properties
 
 Traps to avoid: *testing your code against itself*.
