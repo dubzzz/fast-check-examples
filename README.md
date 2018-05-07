@@ -12,6 +12,13 @@ This repository has two main targets:
 - reference useful materials and examples to help users of fast-check
 - give examples of properties
 
+## Property based testing in a nutshell
+
+Testing properties instead of isolated examples.
+It makes it possible to cover a wider range of inputs and hence find yet undiscovered bugs (see bugs discovered by fast-check: ).
+
+A property can be summurized by: *for any (a, b, ...) such as precondition(a, b, ...) holds, property(a, b, ...) is true*
+
 ## Tips to find useful properties
 
 Traps to avoid: *testing your code against itself*.
