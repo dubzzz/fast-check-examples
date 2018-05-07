@@ -15,7 +15,7 @@ This repository has two main targets:
 ## Property based testing in a nutshell
 
 Testing properties instead of isolated examples.
-It makes it possible to cover a wider range of inputs and hence find yet undiscovered bugs (see bugs discovered by fast-check: ).
+It makes it possible to cover a wider range of inputs and hence find yet undiscovered bugs (see bugs discovered by fast-check: [js-yaml](https://github.com/nodeca/js-yaml/pull/398), [query-string](https://github.com/sindresorhus/query-string/pull/138), [left-pad](https://github.com/stevemao/left-pad/issues/58)).
 
 A property can be summurized by: *for any (a, b, ...) such as precondition(a, b, ...) holds, property(a, b, ...) is true*
 
