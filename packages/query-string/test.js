@@ -21,8 +21,7 @@ const queryParamsArbitrary = fc.object({
 const optionsArbitrary = fc.record({
   arrayFormat: fc.constantFrom('bracket', 'index', 'none'),
   strict: fc.boolean(),
-  encode: fc.boolean(),
-  sort: fc.boolean()
+  sort: fc.constant(false)
 });
 
 describe('query-string', () => {

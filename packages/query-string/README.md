@@ -12,6 +12,8 @@ m.stringify({bar: ['a', null, 'b']}, {arrayFormat: 'bracket'}) //=> "bar[]=a&bar
 m.parse('bar[]=a&bar&bar[]=b', {arrayFormat: 'bracket'}) //=> {bar: [null, 'b']}
 ```
 
+**Fixed at:** 6.1.0
+
 ## Properties
 
 ### [A] should read correctly from stringified query params

@@ -8,6 +8,8 @@ Total downloads: ![total downloads](https://img.shields.io/npm/dt/is-thirteen.sv
 
 **Code example:** `is("🐱🐱🐱🐱🐱🐱🐱🐱🐱🐱🐱🐱🐱").thirteen()` returns false while `is("!!!!!!!!!!!!!").thirteen()` returns true.
 
+**Fixed at:** N.A
+
 ## Properties
 
 ### [A] should validate a string being 13 times the same character

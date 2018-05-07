@@ -12,6 +12,8 @@ leftPad('a\u{1f431}b', 4, 'x') //=> 'a\u{1f431}b'  -- in: 3 code points, out: 3 
 leftPad('abc', 4, '\u{1f431}') //=> '\u{1f431}abc' -- in: 3 code points, out: 4 code points
 ```
 
+**Fixed at:** N.A
+
 ## Properties
 
 ### [A] should be able to pad simple strings with utf-16 characters
