@@ -38,7 +38,7 @@ For instance: if the algorithm computes the average of two numbers
 ```js
 fc.assert(
   fc.property(
-    fc.integer(), fc.integer()
+    fc.integer(), fc.integer(),
     (a, b) => a <= b
       ? a <= average(a, b) && average(a, b) <= b
       : b <= average(a, b) && average(a, b) <= a));
@@ -65,7 +65,7 @@ For instance: if the algorithm removes duplicates from an array
 fc.assert(
   fc.property(
     fc.set(fc.char()),
-    data => assert.equal(removeDuplicates(data), data)));
+    data => assert.deepEqual(removeDuplicates(data), data)));
 ```
 
 *In other words: removing duplicates of an array of unique values returns the array itself*
