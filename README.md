@@ -4,7 +4,7 @@
 
 It can easily be installed using npm:
 
-```
+```bash
 npm install fast-check --save-dev
 ```
 
@@ -26,7 +26,7 @@ Sometimes the output of your algorithm might be easy to verify.
 Your output might have some easy relationship with the input.
 
 For instance: if the algorithm computes the average of two numbers
-```
+```js
 fc.assert(
   fc.property(
     fc.integer(), fc.integer()
@@ -38,7 +38,7 @@ fc.assert(
 *In other words: the average of a and b must be between a and b*
 
 For instance: if the algorithm factorizes a number
-```
+```js
 fc.assert(
   fc.property(
     fc.nat(),
@@ -52,7 +52,7 @@ fc.assert(
 Sometimes some inputs might have easy outputs.
 
 For instance: if the algorithm removes duplicates from an array
-```
+```js
 fc.assert(
   fc.property(
     fc.set(fc.char()),
@@ -62,7 +62,7 @@ fc.assert(
 *In other words: removing duplicates of an array of unique values returns the array itself*
 
 For instance: if the algorithm checks if a string contains another one
-```
+```js
 fc.assert(
   fc.property(
     fc.string(), fc.string(), fc.string(),
@@ -76,7 +76,7 @@ fc.assert(
 Whenever your algorithm can be seen as an optimized version of another, you might compare the two algorithms in terms of their outputs.
 
 For instance: if the algorithm checks that a sorted array contains a given value in a binary way
-```
+```js
 fc.assert(
   fc.property(
     fc.char(), fc.array(fc.char()).map(d => d.sort()),
