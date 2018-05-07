@@ -85,6 +85,32 @@ fc.assert(
 
 *In other words: binaryContains and linearContains must always agree, only the complexity differs*
 
+### Combination of functions
+
+#### Round trip
+
+The API provides some kind of encode/decode functions. In this case the round trip is: `decode(encode(value)) === value`.
+
+For instance: if you have two methods zip/unzip
+```js
+fc.assert(
+  fc.property(
+    fc.string(),
+    v => unzip(zip(v)) === v));
+```
+
+*In other words: unzip is the reverse of zip*
+
+#### More general combination
+
+For instance: if you provide lcm and gcd
+```js
+fc.assert(
+  fc.property(
+    fc.nat(), fc.nat(),
+    (a, b) => lcm(a, b) * gcd(a, b) === a * b));
+```
+
 ## Project structure
 
 The examples provided in this repository always come with a readme file and an implementation based on fast-check. The readme should describe briefly the algorithm being tested and give examples of properties that might be applied.
