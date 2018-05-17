@@ -1,20 +1,28 @@
-# Examples based on [fast-check](https://github.com/dubzzz/fast-check)
+# Property based testing with [fast-check](https://github.com/dubzzz/fast-check)
 
-**fast-check** is a property based testing framework written in TypeScript.
+This repository provides examples of property based tests you might write. It makes use of **fast-check** - framework written in TypeScript - but can easily be transposed to other frameworks or languages.
 
-It can easily be installed using npm:
+In order to add **fast-check** to you project, you have to run:
 
 ```bash
 npm install fast-check --save-dev
 ```
 
-This repository has two main targets:
-- reference useful materials and examples to help users of fast-check
-- give examples of properties
+If you want to run the properties of this repository locally:
+
+```bash
+git clone https://github.com/dubzzz/fast-check-examples.git
+cd fast-check-examples
+npm install
+npm run test
+```
+
+Please note that tests of failing implementations have been disabled.
 
 ## Property based testing in a nutshell
 
-Testing properties instead of isolated examples.
+The motto of property based testing: properties instead of isolated examples - *or in addition to*.
+
 It makes it possible to cover a wider range of inputs and hence find yet undiscovered bugs (see bugs discovered by fast-check: [js-yaml](https://github.com/nodeca/js-yaml/pull/398), [query-string](https://github.com/sindresorhus/query-string/pull/138), [left-pad](https://github.com/stevemao/left-pad/issues/58)).
 
 A property can be summurized by: *for any (a, b, ...) such as precondition(a, b, ...) holds, property(a, b, ...) is true*
@@ -29,10 +37,17 @@ Keep in mind that *properties might not be able to assess the exact value of the
 
 Here are some tips that can help you to find your properties.
 
-### Bounded output
+### Independant of your inputs
 
-Sometimes the output of your algorithm might be easy to verify.
-Your output might have some easy relationship with the input.
+**When?** Some characteristics of your output are independant from your input
+
+For instance:
+- for any floating point number `d`, `Math.floor(d)` is an integer
+- for any integer `n`, `Math.abs(n)` is superior to `0`
+
+### Characteristics derived from the input
+
+**When?** Output has an easy relationship with the input
 
 For instance: if the algorithm computes the average of two numbers
 ```js
@@ -58,7 +73,7 @@ fc.assert(
 
 ### Subset of inputs
 
-Sometimes some inputs might have easy outputs.
+**When?** Some inputs might have easy outputs
 
 For instance: if the algorithm removes duplicates from an array
 ```js
@@ -80,21 +95,9 @@ fc.assert(
 
 *In other words: the concatenation of a, b and c always contains string b*
 
-### Compare to a simpler version
-
-Whenever your algorithm can be seen as an optimized version of another, you might compare the two algorithms in terms of their outputs.
-
-For instance: if the algorithm checks that a sorted array contains a given value in a binary way
-```js
-fc.assert(
-  fc.property(
-    fc.char(), fc.array(fc.char()).map(d => d.sort()),
-    (c, data) => binaryContains(c, data) === linearContains(c, data)));
-```
-
-*In other words: binaryContains and linearContains must always agree, only the complexity differs*
-
 ### Combination of functions
+
+**When?** Two or more functions in your API can be combined to have something simple to assess
 
 #### Round trip
 
@@ -120,9 +123,19 @@ fc.assert(
     (a, b) => lcm(a, b) * gcd(a, b) === a * b));
 ```
 
-## Project structure
+### Compare to a simpler version
 
-The examples provided in this repository always come with a readme file and an implementation based on fast-check. The readme should describe briefly the algorithm being tested and give examples of properties that might be applied.
+**When?** There is a slower but simpler implementation or you are rewriting the code
+
+For instance: if the algorithm checks that a sorted array contains a given value in a binary way
+```js
+fc.assert(
+  fc.property(
+    fc.char(), fc.array(fc.char()).map(d => d.sort()),
+    (c, data) => binaryContains(c, data) === linearContains(c, data)));
+```
+
+*In other words: binaryContains and linearContains must always agree, only the complexity differs*
 
 ## More on Property Based Testing
 
