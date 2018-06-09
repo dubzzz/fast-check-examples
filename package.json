@@ -35,7 +35,7 @@
     "babel-jest": "^22.4.3",
     "babel-plugin-transform-es2015-modules-commonjs": "^6.26.0",
     "babel-preset-env": "^1.6.0",
-    "fast-check": "^1.1.0",
+    "fast-check": "^1.2.0",
     "jasmine": "^3.1.0",
     "jest": "^22.4.3",
     "mocha": "^5.0.5",
