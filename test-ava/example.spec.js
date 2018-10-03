@@ -8,6 +8,10 @@ testProp('The concatenation of a, b and c always contains b', [fc.string(), fc.s
   return contains(b, a + b + c);
 });
 
-testProp('The concatenation of a, b and c always contains b (with expect)', [fc.string(), fc.string(), fc.string()], (a, b, c) => {
-  expect(contains(b, a + b + c)).to.be.true;
-});
+testProp(
+  'The concatenation of a, b and c always contains b (with expect)',
+  [fc.string(), fc.string(), fc.string()],
+  (a, b, c) => {
+    expect(contains(b, a + b + c)).to.be.true;
+  }
+);
