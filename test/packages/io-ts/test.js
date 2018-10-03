@@ -17,7 +17,8 @@ const BaseTypeArbitrary = fc
         fc.tuple(fc.constant(t.Integer), fc.integer()),
         fc.tuple(fc.constant(t.Array), fc.array(fc.anything())),
         fc.tuple(fc.constant(t.array(t.number)), fc.array(fc.integer())),
-        fc.tuple(fc.constant(t.Dictionary), fc.dictionary(fc.fullUnicodeString(), fc.anything()))
+        fc.tuple(fc.constant(t.Dictionary), fc.dictionary(fc.fullUnicodeString(), fc.anything())),
+        fc.tuple(fc.constant(t.Function), fc.func(fc.integer()))
       )
     ),
     (a, b) => a[0] === b[0]
