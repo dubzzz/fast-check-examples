@@ -1,4 +1,4 @@
-import { testProp, fc } from 'ava-fast-check';
+import { testProp, fc } from '@fast-check/ava';
 import { expect } from 'chai';
 
 ///*bug*/ const contains = (pattern, text) => text.substr(1).indexOf(pattern) !== -1;
