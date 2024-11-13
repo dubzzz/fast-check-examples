@@ -1,4 +1,4 @@
-# Property based testing with [fast-check](https://github.com/dubzzz/fast-check)
+# Property based testing with [fast-check](https://fast-check.dev/)
 
 This repository provides examples of property based tests you might write. It makes use of **fast-check** - framework written in TypeScript - but can easily be transposed to other frameworks or languages.
 
